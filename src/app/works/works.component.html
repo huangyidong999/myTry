@@ -1,0 +1,19 @@
+<h2>my workers</h2>
+
+<div>
+    <label for="new-hero">work name: </label>
+    <input placeholder="name"  #heroName />
+    <input placeholder="des"  #des />
+
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button  (click)="add(heroName.value,des.value); heroName.value=''; des.value=''">
+      Add work
+    </button>
+</div>
+
+<div>
+    <ul>
+        <li *ngFor="let w of workers" ><p>{{w.name}}:</p><p>{{w.des}}</p></li>
+    </ul>
+</div>
+
