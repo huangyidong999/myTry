@@ -8,12 +8,11 @@ import { Work } from './works';
   export class InMemoryDataService implements InMemoryDbService{
       createDb(){
           const works =[
-            { id: 1, name: 'SpringBoot-Learning 10days-each afternoon', des: 'I need to finish it and start my job hunting' },
-            { id: 2, name: 'Project Paper-each morning', des: 'Finish paper in this week' },
-            { id: 3, name: 'Angular4 project upload and update-af', des:'just update this to github, then it will be done'},
-            { id: 4, name: 'plan build for english improvement-each evening', des:'practice listing every morning, try '},
-            { id: 5, name: 'Find a part time job near by my place', des:'I need some money to fed myself'},
-            { id: 6, name: 'build my body', des:'I plan to train myself with a app called keep'}
+            { id: 1, name: 'Keep Jobs Hunting every day', des: 'before I get a offer I need to do it every day' },
+            { id: 2, name: 'Project Paper-each morning', des: 'Finish paper by add some information like good graphy, table' },
+            { id: 3, name: 'build my body', des:'I plan to train myself with a app called keep'},
+            { id: 4, name: 'Prepare for the codesiganl interview step1', des: 'take a note on some algorithm and keep my best in this'},
+            { id: 5, name: 'Prepare for codesignal interview face to face', des:'learn the video in fance book and introduce my project on Youtube, also get some basic knowlegement on O compelexcity'}
           ];
         
           return {works};
