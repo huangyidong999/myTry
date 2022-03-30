@@ -1,0 +1,80 @@
+<p>
+    1. How to Create a App with Angular
+    For Create a Angular Project<br>
+    Using CLI, "ng new yourAppName"
+
+    2. The Interpolation binding synatx in Angular
+    we can create a var in component.ts file and use the vat by {{var name}}
+    in out html page
+
+    3.Create a Class inside component
+    For Creating a class:
+    it would be like this,
+
+            import { Component, OnInit } from '@angular/core';
+
+        @Component({
+        selector: 'app-heroes',
+        templateUrl: './heroes.component.html',
+        styleUrls: ['./heroes.component.css']
+        })
+        export class HeroesComponent implements OnInit {
+
+        constructor() { }
+
+        ngOnInit(): void {
+        }
+
+        }
+    
+    First    We Always import Component and Annotate the component class with
+     @Component, which is decorator function helping programe to know the data need to use(Offically called metadata)
+    
+    Second  ngOnInit() is a lifecyle hook, Angular will calls ngOnInit(),
+    this is a good place to put some intialization data
+    
+    Third   Always export the class, cause we need to use it outside
+
+   4. How to Display data from Component in Html pages
+   <h1>{{ varName}}</h1>
+
+   We also can create the data stucture by typeScript and import that to our component class to use them,
+   like:
+        hero: Hero = {
+            id: 1,
+            name: 'Windstorm'
+        }; 
+    the hero is our var name in local, the Herp is our import name.
+        Code : import { Hero } from '../hero';
+    
+
+    If we done the import of data from outplaces, using the complatied data, we may can dispaly other propoties also,
+    it would be like this:
+        <h2>{{hero.name}} Details</h2>
+        <div><span>id: </span>{{hero.id}}</div>
+        <div><span>name: </span>{{hero.name}}</div>
+    
+    5.Two-way binding
+    Example:
+
+    <div>
+        <label for="name">Hero name: </label>
+        <input id="name" [(ngModel)]="hero.name" placeholder="name">
+    </div>
+
+    ngModel is the way in Anguar of two way binding. Here we bind the hero.name property with the HTML text input box, so it can
+    flow between html text box and the hero.name property
+
+    To use ngModel, we need to import FormsModel to our app.modules.ts file, like this:
+        import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+    Then add the FormsModule into or metadata's import array:
+    
+                        imports: [
+                    BrowserModule,
+                    FormsModule
+                    ],
+    Again, the explaination above, all is in the file of app.module.ts
+
+    THIS IS REALLY IMPORTANT: declar the component into module.ts file
+    
+</p>
