@@ -1,0 +1,64 @@
+<p>
+    1. List Elements in component by using *ngFor
+
+    example:
+
+        <h2>My Heroes</h2>
+        <ul class="heroes">
+        <li *ngFor="let hero of heroes">
+            <span class="badge">{{hero.id}}</span> {{hero.name}}
+        </li>
+        </ul>
+    
+    First, *ngFor is Angular's Repeater directive. It repeats the host element for each element in a list.
+    At here we have import heroes in our component code by hero = HEROS, therefore hero will repersent the list HEROS.
+    Then the element li will be repeated till all elements in HEROS has been used.
+
+    2.Duck Typing 可选属性
+    example:
+        in component code:
+            selectedHero?: Hero;
+            onSelect(hero: Hero): void {
+            this.selectedHero = hero;
+            }
+        
+        in html code:
+            <h2>{{selectedHero.name | uppercase}} Details</h2>
+            <div><span>id: </span>{{selectedHero.id}}</div>
+            <div>
+            <label for="hero-name">Hero name: </label>
+            <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+            </div>
+    At here selectedHero is one of may selected property in class. it will be clear on our function onSelect,
+    and Display by selectedHero.id or others. But here is a question: in the begining, we didnt call the function of onSelected,
+    how could we successfully Display our html page?
+
+    3.*ngIf
+    example:
+        <div *ngIf="selectedHero">
+
+            <h2>{{selectedHero.name | uppercase}} Details</h2>
+            <div><span>id: </span>{{selectedHero.id}}</div>
+            <div>
+            <label for="hero-name">Hero name: </label>
+            <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+            </div>
+        
+        </div>
+
+    Here we use *ngIf to check wheather selecterdHero exsist?
+    
+    4.Style the selected hero
+    What if we want to change to style of selected element?
+    
+    example:
+        <li *ngFor="let hero of heroes"
+        [class.selected]="hero === selectedHero"
+        (click)="onSelect(hero)">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+        </li>
+
+    Here we use [class.selected]="hero ==== selectedHero" to change the style.
+
+    Angular's class binding can add and remove a CSS class conditionally. Add [class.some-css-class]="some-condition" to the element you want to style.
+</p>
