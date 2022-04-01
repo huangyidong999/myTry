@@ -1,0 +1,19 @@
+<p>
+    1. the @Input()
+    ngModel is the two-way binding decorotation, the @input is the one way blind from component to html page?
+    example in component:
+        import { Component, OnInit, Input } from '@angular/core'; 
+        @Input() hero?: Hero;
+
+    Firstly, we need to import the Input code.
+    Secondly, we just need to decorate hero by @Input()
+    then we can use it in front page?
+
+    example in html:
+        <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+    at here [hero] is from heroDetail component, and the selectedHero is a var which will be set in function in another component 
+
+    2.the way how to use one data in A component on B component
+    the hero is decorote by @Input. so the other component can visit the hero's value
+</p>
