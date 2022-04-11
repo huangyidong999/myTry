@@ -15,13 +15,14 @@ export class WorksComponent implements OnInit {
 
   constructor(private workService:WorkService) { }
 
+  ngOnInit(): void {
+    this.getWorkers();
+  }
+
   getWorkers():void{
     this.workService.getWorks().subscribe(workers => this.workers = workers)
   }
 
-  ngOnInit(): void {
-    this.getWorkers();
-  }
 
   add(name: string, des: string): void {
     name = name.trim();

@@ -13,7 +13,12 @@
 
 <div>
     <ul>
-        <li *ngFor="let w of workers" ><p>{{w.name}}:</p><p>{{w.des}}</p></li>
+        <li *ngFor="let works of workers" ><p>{{works.name}}:</p><p>{{works.des}}</p></li>
+        <button (click)="delete(workers[0])">Done the First Job</button>
     </ul>
+</div>
+
+<div>
+
 </div>
 
